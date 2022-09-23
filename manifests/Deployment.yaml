@@ -13,10 +13,9 @@ spec:
         app: kuard
     spec:
       containers:
-      # - image: gcr.io/kuar-demo/kuard-amd64:1
-      # - image: edirom/vife-website:latest
-      - image: devopsctrain.azurecr.io/akstask1:41
+      - image: devopsctrain.azurecr.io/akstask1
         imagePullPolicy: Always
         name: kuard
         ports:
-        - containerPort: 8080
+        - containerPort: 80
+        # - containerPort: 8080
