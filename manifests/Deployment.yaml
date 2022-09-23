@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: train2middle
+  name: kuard
 spec:
   selector:
     matchLabels:
-      app: train2middle
+      app: kuard
   replicas: 1
   template:
     metadata:
       labels:
-        app: train2middle
+        app: kuard
     spec:
       containers:
-      # - image: gcr.io/kuar-demo/train2middle-amd64:1
+      # - image: gcr.io/kuar-demo/kuard-amd64:1
       # - image: edirom/vife-website:latest
       - image: devopsctrain.azurecr.io/akstask1:41
         imagePullPolicy: Always
-        name: train2middle
+        name: kuard
         ports:
         - containerPort: 8080

@@ -1,17 +1,17 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: train2middle
-  # annotations:
+  name: kuard
+  annotations:
     # kubernetes.io/ingress.class: "nginx"    
-    # cert-manager.io/issuer: "letsencrypt-staging"
+    cert-manager.io/issuer: "letsencrypt-staging"
 spec:
-  # tls:
-  # - hosts:
-  #   - azuredevop.pp.ua
-  #   secretName: quickstart-example-tls
+  tls:
+  - hosts:
+    - azuredevop.pp.ua
+    secretName: quickstart-example-tls
   rules:
-  # ingressClassName: "nginx"
+  ingressClassName: "nginx"
   - host: azuredevop.pp.ua
     http:
       paths:
@@ -19,6 +19,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: train2middle
+            name: kuard
             port:
               number: 80

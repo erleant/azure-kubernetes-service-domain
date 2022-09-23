@@ -77,7 +77,8 @@ stages:
               manifests: |
                 $(Pipeline.Workspace)/manifests/Deployment.yaml
                 $(Pipeline.Workspace)/manifests/Service.yaml
-                $(Pipeline.Workspace)/manifests/Ingress.yaml
+                $(Pipeline.Workspace)/manifests/Ingress-prd.yaml
+                $(Pipeline.Workspace)/manifests/Issuer-prd.yaml
               imagePullSecrets: |
                 $(imagePullSecret)
               containers: |
