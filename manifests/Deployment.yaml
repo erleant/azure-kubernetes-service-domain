@@ -13,7 +13,7 @@ spec:
         app: kuard
     spec:
       containers:
-      - image: devopsctrain.azurecr.io/akstask1
+      - image: devopsctrain.azurecr.io/akstask1:latest
         imagePullPolicy: Always
         name: kuard
         ports:
