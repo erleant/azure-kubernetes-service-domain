@@ -11,11 +11,11 @@ variables:
 - name: Build.Version.Number
   value: ${{ variables.version }}
 - name: dockerRegistryServiceConnection
-  value: 'b836f454-aaf4-4df8-a656-46f0a53e7973'
+  value: $(dockerRegistryServiceConnection)
 - name: imageRepository
-  value: 'aks4'
+  value: $(imageRepository)
 - name: containerRegistry
-  value: 'devopsctrain.azurecr.io'
+  value: $(containerRegistry)
 - name: dockerfilePath
   value:  '**/Dockerfile'
 - name: vmImageName 
@@ -52,7 +52,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: $(vmImageName)
-    environment: 'DevOpsAzure-1090.default'
+    environment: $(environment)
     strategy:
       runOnce:
         deploy:

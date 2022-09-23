@@ -8,11 +8,11 @@ metadata:
 spec:
   tls:
   - hosts:
-    - azuredevop.pp.ua
+    - example.pp.ua
     secretName: quickstart-example-tls
   rules:
   ingressClassName: "nginx"
-  - host: azuredevop.pp.ua
+  - host: example.pp.ua
     http:
       paths:
       - path: /

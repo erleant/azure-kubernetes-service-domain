@@ -13,7 +13,7 @@ spec:
         app: kuard
     spec:
       containers:
-      - image: devopsctrain.azurecr.io/aks4
+      - image: example.azurecr.io/imageRepository
         name: kuard
         ports:
         - containerPort: 8080
