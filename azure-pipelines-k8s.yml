@@ -56,7 +56,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: $(vmImageName)
-    environment: 'AKS-4627.default'
+    environment: 'DevOpsAzure-1090.default'
     strategy:
       runOnce:
         deploy:
