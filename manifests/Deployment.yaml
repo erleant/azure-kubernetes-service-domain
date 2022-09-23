@@ -13,9 +13,7 @@ spec:
         app: kuard
     spec:
       containers:
-      # - image: devopsctrain.azurecr.io/aks4:latest
       - image: devopsctrain.azurecr.io/aks4
-        # imagePullPolicy: Always
         name: kuard
         ports:
         - containerPort: 8080
