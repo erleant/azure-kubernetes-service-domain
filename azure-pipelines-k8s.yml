@@ -21,9 +21,6 @@ variables:
 - name: vmImageName 
   value: 'ubuntu-latest'
   
-# - name: imagePullSecret 
-#   value: 'devopsctrain20110471-auth'
-
 stages:
 - stage: Build
   displayName: Build stage
@@ -61,13 +58,6 @@ stages:
         deploy:
           steps:
 
-          # - task: KubernetesManifest@0
-          #   displayName: Create imagePullSecret
-          #   inputs:
-          #     action: createSecret
-          #     secretName: $(imagePullSecret)
-          #     dockerRegistryEndpoint: $(dockerRegistryServiceConnection)
-
           - task: KubernetesManifest@0
             displayName: Deploy to Kubernetes cluster
             inputs:
@@ -78,7 +68,5 @@ stages:
                 $(Pipeline.Workspace)/manifests/Service.yaml
                 $(Pipeline.Workspace)/manifests/Ingress-prd.yaml
                 $(Pipeline.Workspace)/manifests/Issuer-prd.yaml
-              # imagePullSecrets: |
-              #   $(imagePullSecret)
               containers: |
                 $(containerRegistry)/$(imageRepository):${{ variables.version }}.$(Build.BuildId)
