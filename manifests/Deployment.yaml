@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: train2middle
+spec:
+  selector:
+    matchLabels:
+      app: train2middle
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: train2middle
+    spec:
+      containers:
+      # - image: gcr.io/kuar-demo/train2middle-amd64:1
+      # - image: edirom/vife-website:latest
+      - image: devopsctrain.azurecr.io/akstask1:41
+        imagePullPolicy: Always
+        name: train2middle
+        ports:
+        - containerPort: 8080
